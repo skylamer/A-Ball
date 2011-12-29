@@ -1,0 +1,116 @@
+<html>
+<title>A BALL @ jsfiddle/xbVhh/144</title>
+<style>
+*{
+margin:0;
+padding:0
+}
+html,body{
+overflow:hidden;
+height:100%;
+width:100%
+}
+section{
+position:relative;  
+margin:0 auto;  
+-moz-perspective:33ex;
+-ms-perspective:33ex;
+-webkit-perspective:33ex;
+-o-perspective:33ex;
+perspective:33ex
+}
+a{
+display:inline-block;  
+position:relative;  
+margin:33% 50%;
+height:111px;
+width:111px;
+-moz-transform-style:preserve-3d;
+-moz-transform:rotateX(0) rotateY(0) rotateZ(0);
+-webkit-transform-style:preserve-3d;
+-webkit-transform:rotateX(0) rotateY(0) rotateZ(0);
+-ms-transform-style:preserve-3d;
+-ms-transform:rotateX(0) rotateY(0) rotateZ(0);
+-o-transform-style:preserve-3d;
+-o-transform:rotateX(0) rotateY(0) rotateZ(0);
+transform-style:preserve-3d;
+transform:rotateX(0) rotateY(0) rotateZ(0);
+color:transparent;
+-moz-animation:rot alternate 11s infinite cubic-bezier(1, .62, .13, .62);
+-ms-animation:rot alternate 11s infinite cubic-bezier(1, .62, .13, .62);
+-webkit-animation:rot alternate 11s infinite cubic-bezier(1, .62, .13, .62);
+-o-animation:rot alternate 11s infinite cubic-bezier(1, .62, .13, .62);
+animation:rot alternate 11s infinite cubic-bezier(1, .62, .13, .62)
+}
+a span{
+position:absolute;  
+height:200px;  
+width:200px;
+border:1px solid transparent;
+border-radius:200px
+}
+@-moz-keyframes rot{
+0%{-moz-transform:rotateY(0) rotateX(0) rotateZ(0)}
+100%{-moz-transform:rotateY(360deg) rotateX(720deg) rotateZ(920deg)}
+}
+@-webkit-keyframes rot{
+0%{-webkit-transform:rotateY(0) rotateX(0) rotateZ(0)}
+100%{-webkit-transform:rotateY(360deg) rotateX(720deg) rotateZ(920deg)}
+}
+@-ms-keyframes rot{
+0%{-ms-transform:rotateY(0) rotateX(0) rotateZ(0)}
+100%{-ms-transform:rotateY(360deg) rotateX(720deg) rotateZ(920deg)}
+}
+@-o-keyframes rot{
+0%{-o-transform:rotateY(0) rotateX(0) rotateZ(0)}
+100%{-o-transform:rotateY(360deg) rotateX(720deg) rotateZ(920deg)}
+}
+@keyframes rot{
+0%{transform:rotateY(0) rotateX(0) rotateZ(0)}
+100%{transform:rotateY(360deg) rotateX(720deg) rotateZ(920deg)}
+}
+</style>
+<script>
+window.onload = function(){
+var i = 111,
+    s = null,
+    x = 0,
+    y = 0,
+    z = 0,
+    c = document.getElementsByTagName("a")[0],
+    html = document.getElementsByTagName("html")[0]
+    html.style.msTransition
+    html.style.mozTransition =
+    html.style.oTransition =
+    html.style.Transition =
+    html.style.webkitTransition = 
+    "all .33s linear"
+    setInterval(function() {
+        xa = Math.floor(Math.random() * 255);
+        html.style.boxShadow = "inset 0 0 33px 11px rgba(" + xa + "," + xa + "," + xa + ",1)"
+        html.style.background = "rgba(" + xa + "," + xa + "," + xa + ",.33)"
+    }, 1001);
+while (--i) {
+    s = document.createElement('span');
+    x = ~~ (Math.random() * 720);
+    y = ~~ (Math.random() * 360);
+    z = ~~ (Math.random() * 920);
+    s.style.webkitTransform =
+    s.style.MozTransform =
+    s.style.oTransform =
+    s.style.msTransform =
+    s.style.Transform = 
+    'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)'
+    s.style.borderColor = "#eea";
+    c.appendChild(s);
+}
+}
+</script>
+<body>
+<section>
+<a>
+<span></span>
+</a>
+</section>
+</body>
+</html>
